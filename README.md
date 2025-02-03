@@ -32,7 +32,7 @@ This project reads a CSV file containing molecule data with start and finish tim
    ```
 3. Clone the project from GitHub:
    ```bash
-   git clone <your-repository-url>
+   git clone git@github.com:dvdmakeev/chem_scripts.git
    ```
    Alternatively, download the ZIP file from GitHub and extract it.
 
