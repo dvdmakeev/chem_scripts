@@ -135,7 +135,7 @@ def main(args):
 
     with open(output_file_name, 'w') as f:
         for time, molecules in intersection_results.items():
-            f.write(f'{time}: {len(molecules)}: {", ".join(molecules)}\n')
+            f.write(f'{time}, {len(molecules)}, "{" ".join(molecules)}"\n')
 
     # Plot the graph
     plot_intersections(intersection_results)
