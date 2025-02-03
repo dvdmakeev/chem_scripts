@@ -24,6 +24,7 @@ def read_csv(file_path):
 
 def parse_data(lines):
     data = []
+
     for line in lines[1:]:
         line = line.strip().split(",")
         data.append({
@@ -101,6 +102,9 @@ def find_intersections(data: list[dict]) -> dict[float, list[str]]:
         current_molecules.difference_update(finishes_map[finishes[j]])
         intersections[finishes[j]] = list(current_molecules)
         j += 1
+
+    for intersection in intersections:
+        intersections[intersection].sort()
 
     return intersections
 

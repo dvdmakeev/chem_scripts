@@ -37,10 +37,6 @@ def test_find_molecule_intersections():
 
     result = find_intersections(data)
 
-    # sort molecules in the result
-    for key in result:
-        result[key].sort()
-
     assert result == expected_result
 
 
@@ -60,8 +56,6 @@ def test_find_molecule_intersections_single():
     }
     result = find_intersections(data)
 
-    for key in result:
-        result[key].sort()
     assert result == expected_result
 
 def test_find_molecule_intersections_no_overlap():
@@ -76,9 +70,7 @@ def test_find_molecule_intersections_no_overlap():
         5: [],
     }
     result = find_intersections(data)
-    # sort molecules in the result
-    for key in result:
-        result[key].sort()
+
     assert result == expected_result
 
 def test_find_molecule_intersections_full_overlap():
@@ -91,8 +83,5 @@ def test_find_molecule_intersections_full_overlap():
         5: [],
     }
     result = find_intersections(data)
-
-    for key in result:
-        result[key].sort()
 
     assert result == expected_result
