@@ -1,6 +1,8 @@
 import os
 import sys
 
+from plot import plot_intersections
+
 
 # Data example:
 # Molecule              Start, min  Finish, min
@@ -135,6 +137,9 @@ def main(args):
         for time, molecules in intersection_results.items():
             f.write(f'{time}: {len(molecules)}: {", ".join(molecules)}\n')
 
+    # Plot the graph
+    plot_intersections(intersection_results)
+    print("Done")
 
 if __name__ == '__main__':
     main(sys.argv)
