@@ -28,12 +28,17 @@ def parse_data(lines):
     data = []
 
     for line in lines[1:]:
-        line = line.strip().split(",")
-        data.append({
-            'molecule': line[0],
-            'start': float(line[1]),
-            'finish': float(line[2])
-        })
+        try:
+            line = line.strip().split(",")
+            data.append({
+                'molecule': line[0],
+                'start': float(line[1]),
+                'finish': float(line[2])
+            })
+        except Exception as e:
+            print(f'Error parsing line: {line}')
+            print(e)
+            raise e
 
     return data
 
