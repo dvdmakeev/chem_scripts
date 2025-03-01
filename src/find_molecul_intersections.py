@@ -146,5 +146,6 @@ def main(args):
     plot_intersections(intersection_results)
     print("Done")
 
+
 if __name__ == '__main__':
     main(sys.argv)
