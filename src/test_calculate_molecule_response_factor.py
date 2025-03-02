@@ -1,5 +1,5 @@
 import pytest
-from calculate_molecule_response_factors import calculate_molecules_response_factors
+from calculate_molecule_response_factors import calculate_molecules_response_factors, validate_molecules_response_factors
 
 
 def test_calculate_molecule_response_factor():
@@ -61,3 +61,40 @@ def test_calculate_molecule_response_factor_missing_fragment_value_error():
 
     with pytest.raises(ValueError):
         calculate_molecules_response_factors(molecules, response_factors)
+
+
+def test_validate_molecules_response_factors():
+    molecules = [
+        '15:0-15:1-15:2',
+        '17:0-17:1-17:2',
+    ]
+    response_factors = {
+        '15:0': 0.1,
+        '15:1': 0.2,
+        '15:2': 0.3,
+        '17:0': 0.1,
+        '17:1': 5,
+        '17:2': 10,
+    }
+
+    result = validate_molecules_response_factors(molecules, response_factors)
+
+    assert result == None
+
+
+def test_validate_molecules_response_factors_missing_fragment():
+    molecules = [
+        '15:0-15:1-15:2',
+        '17:0-17:1-17:2',
+    ]
+    response_factors = {
+        '15:0': 0.1,
+        '15:1': 0.2,
+        '17:0': 0.1,
+        '17:1': 5,
+        '17:2': 10,
+    }
+
+    result = validate_molecules_response_factors(molecules, response_factors)
+
+    assert result == {'15:2': ['15:0-15:1-15:2']}
