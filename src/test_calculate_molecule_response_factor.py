@@ -16,8 +16,8 @@ def test_calculate_molecule_response_factor():
         '17:2': 10,
     }
     expected_result = {
-        '15:1-15:2-15:5': 0.3333333333333333,
-        '17:0-17:1-17:2': 5.033333333333333
+        '15:1-15:2-15:5': 0.3333,
+        '17:0-17:1-17:2': 5.0333
     }
 
     result = calculate_molecules_response_factors(molecules, response_factors)
@@ -43,7 +43,7 @@ def test_calculate_molecule_response_factor_single():
         '15:0': 0.1,
     }
     expected_result = {
-        '15:0-15:0-15:0': 0.10000000000000002,
+        '15:0-15:0-15:0': 0.1000,
     }
 
     result = calculate_molecules_response_factors(molecules, response_factors)
