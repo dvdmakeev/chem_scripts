@@ -7,7 +7,7 @@ This project reads a CSV file containing molecule data with start and finish tim
 ## Table of Contents
 - [Installation Guide](#installation-guide)
 - [Running the Script](#running-the-script)
-- [Expected Input](#expected-input)
+- [Input File Format](#input-file-format)
 - [Expected Output](#expected-output)
 
 ---
