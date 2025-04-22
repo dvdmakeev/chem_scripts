@@ -9,8 +9,6 @@ This project reads a CSV file containing molecule data with start and finish tim
 - [Running the Script](#running-the-script)
 - [Expected Input](#expected-input)
 - [Expected Output](#expected-output)
-- [Troubleshooting](#troubleshooting)
-- [Acknowledgments](#acknowledgments)
 
 ---
 
